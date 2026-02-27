@@ -92,6 +92,8 @@
 
 * Добавил GIN индексы для полей `timetable_mode_name` и `city` используя библиотеку `gin_trgm_ops` для ускорения поиска по `ILIKE %...%`
 
+* Добавил дополнитенльные query параметры offset и limit для `/api/v1/vacancies/`
+
 * Оптимизировал в `upsert_external_vacancies` получение вакансий (все данные с существующими `external_id` получаю одним запросом и записываю в словарь)
 
 * Вместо `app.on_startup` / `app.on_shutdown` использовал `lifespan`
@@ -118,7 +120,7 @@
 *  Приложен скриншот Swagger UI с выполненными успешными запросами.
 
 ## Cкриншоты:
-Успешное получения вакансий
+Успешное получения вакансий c offset и limit
 ![alt text](docs/image.png)
 Успешное создание новой вакансии без external_id
 ![alt text](docs/image-1.png)

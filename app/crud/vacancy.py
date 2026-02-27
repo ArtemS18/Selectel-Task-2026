@@ -26,13 +26,15 @@ async def list_vacancies(
     session: AsyncSession,
     timetable_mode_name: Optional[str],
     city_name: Optional[str],
+    limit: int,
+    offset: int,
 ) -> List[Vacancy]:
     stmt: Select = select(Vacancy)
     if timetable_mode_name:
         stmt = stmt.where(Vacancy.timetable_mode_name.ilike(f"%{timetable_mode_name}%"))
     if city_name:
         stmt = stmt.where(Vacancy.city_name.ilike(f"%{city_name}%"))
-    stmt = stmt.order_by(Vacancy.published_at.desc())
+    stmt = stmt.order_by(Vacancy.published_at.desc()).limit(limit).offset(offset)
     result = await session.execute(stmt)
     return list(result.scalars().all())
 
