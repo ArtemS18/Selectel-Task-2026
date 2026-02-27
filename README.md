@@ -1,6 +1,6 @@
 
 # Selectel Vacancies API
-## Отчет о проделанное работе см. в ![этом файле](REPORT.md)
+## Отчет о проделанное работе см. в ![файле REPORT.md](REPORT.md)
 
 FastAPI-приложение для парсинга публичных вакансий Selectel, хранения в PostgreSQL и предоставления CRUD API.
 
