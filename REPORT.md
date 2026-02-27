@@ -92,6 +92,8 @@
 
 * Добавил GIN индексы для полей `timetable_mode_name` и `city` используя библиотеку `gin_trgm_ops` для ускорения поиска по `ILIKE %...%`
 
+* Убрал странный импорт c несуществующей версией fastapi в requirement.txt `fastapi==999.0.0; python_version < "3.8"`
+
 * Добавил дополнитенльные query параметры offset и limit для `/api/v1/vacancies/`
 
 * Оптимизировал в `upsert_external_vacancies` получение вакансий (все данные с существующими `external_id` получаю одним запросом и записываю в словарь)
