@@ -89,6 +89,9 @@ FastAPI-приложение для парсинга публичных вака
 * **Решение:**
   Поменял `seconds` на `settings.parse_schedule_minutes * 60`
 
+* **Что сделал:**
+  Запустил еще раз планировщик парсера
+
 * **Проблема:**
   ```python
   "city_name": item.city.name.strip(),
